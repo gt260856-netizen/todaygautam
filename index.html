@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gautam Jha | Free Stock Market Learning Channel</title>
+<meta name="description" content="Free educational Telegram channel by Gautam Jha. Learn how the market works, candlestick basics and common beginner mistakes before your first trade.">
+<meta name="theme-color" content="#f7e8e4">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq.disablePushState = true;
+fbq('set', 'autoConfig', false, '1086452570862182');
+fbq('init', '1086452570862182');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1086452570862182&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --blush:#fbefeb;
+  --rose:#b86f78;
+  --rose-deep:#8e4b55;
+  --rosegold:#c99085;
+  --champagne:#f0d3bf;
+  --char:#2a2225;
+  --char-soft:#5d4f53;
+  --glass:linear-gradient(150deg,rgba(255,255,255,.7),rgba(255,247,244,.42));
+  --glass-border:rgba(255,255,255,.92);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  height:100dvh;overflow:hidden;
+  padding:calc(10px + env(safe-area-inset-top)) calc(10px + env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) calc(10px + env(safe-area-inset-left));
+  font-family:'Montserrat',system-ui,sans-serif;color:var(--char);
+  background-color:#f3e1dc;
+  background-image:
+    radial-gradient(40% 30% at 85% 6%,rgba(226,160,160,.6),transparent 70%),
+    radial-gradient(45% 32% at 8% 28%,rgba(240,211,191,.85),transparent 70%),
+    radial-gradient(42% 30% at 92% 70%,rgba(201,144,133,.5),transparent 70%),
+    radial-gradient(48% 34% at 12% 95%,rgba(196,150,170,.45),transparent 70%),
+    radial-gradient(30% 22% at 50% 50%,rgba(255,240,232,.7),transparent 70%),
+    linear-gradient(165deg,#fbf2ef 0%,#f4e2dc 55%,#ead1ca 100%);
+  display:flex;align-items:center;justify-content:center;
+  -webkit-font-smoothing:antialiased;
+}
+.serif{font-family:'Cormorant Garamond',Georgia,serif}
+
+/* ===== Frame ===== */
+.frame{
+  position:relative;height:100%;width:100%;max-width:460px;border-radius:30px;overflow:hidden;
+  border:1px solid rgba(255,255,255,.95);
+  background:linear-gradient(165deg,rgba(255,255,255,.58),rgba(255,244,240,.34) 50%,rgba(246,224,218,.5));
+  backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);
+  box-shadow:0 30px 60px -22px rgba(90,40,50,.38),0 8px 24px -12px rgba(90,40,50,.22),inset 0 1px 0 #fff;
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:clamp(14px,2.3vh,22px) clamp(14px,4.2vw,20px) clamp(10px,1.5vh,14px);
+  gap:clamp(7px,1.2vh,12px);
+}
+.frame::before{
+  content:"";position:absolute;z-index:0;pointer-events:none;
+  top:-35%;right:-55%;width:85%;height:170%;
+  background:linear-gradient(80deg,transparent 0%,rgba(255,255,255,.5) 42%,rgba(255,255,255,.1) 58%,transparent 72%);
+  transform:rotate(-16deg);
+}
+.frame::after{
+  content:"";position:absolute;z-index:0;pointer-events:none;inset:7px;border-radius:24px;
+  border:1px solid rgba(201,144,133,.35);
+}
+.frame>*{position:relative;z-index:1}
+
+.gcard{
+  border-radius:20px;background:var(--glass);border:1px solid var(--glass-border);
+  box-shadow:inset 0 1px 0 #fff,0 10px 26px -18px rgba(90,40,50,.45);
+}
+
+/* ===== Brand ===== */
+.head{display:flex;align-items:center;gap:11px;padding:2px 4px 0}
+.mark{
+  width:clamp(44px,6.2vh,56px);height:clamp(44px,6.2vh,56px);flex-shrink:0;border-radius:50%;
+  padding:2px;background:linear-gradient(135deg,#e8c1b0,#b86f78 50%,#f0d3bf);
+  box-shadow:0 6px 14px -6px rgba(142,75,85,.6);
+}
+.mark img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;border:2px solid #fff}
+.brand-name{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(20px,5.6vw,24px);line-height:1;letter-spacing:.2px}
+.brand-sub{font-size:clamp(9.5px,2.6vw,10.5px);font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--rose)}
+.head .sep{flex:1;height:1px;background:linear-gradient(90deg,rgba(184,111,120,.45),transparent);margin-left:4px}
+
+/* ===== Tag card ===== */
+.tagc{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 10px 8px 12px;border-radius:16px}
+.tagc .free{display:flex;align-items:center;gap:8px;font-size:clamp(11.5px,3.1vw,12.5px);font-weight:700;color:var(--rose-deep)}
+.tagc .free i{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#c99085,#8e4b55);font-style:normal}
+.tagc .free i svg{width:11px;height:11px}
+.tagc .pill{font-size:clamp(9.5px,2.6vw,10.5px);font-weight:700;color:#fff;background:var(--char);padding:5px 10px;border-radius:99px;white-space:nowrap}
+
+/* ===== Headline card ===== */
+.hcard{padding:clamp(12px,2vh,18px) clamp(14px,4vw,18px)}
+h1{
+  font-family:'Cormorant Garamond',serif;font-weight:700;
+  font-size:clamp(28px,8.4vw,38px);line-height:1.02;letter-spacing:-.3px;color:var(--char);
+}
+h1 em{font-style:italic;background:linear-gradient(95deg,#8e4b55,#c98a7e 60%,#b86f78);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{margin-top:8px;font-size:clamp(12px,3.3vw,13.5px);line-height:1.5;color:var(--char-soft)}
+
+/* Centrepiece: progress roadmap */
+.road{margin-top:clamp(10px,1.8vh,16px);position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.road::before{
+  content:"";position:absolute;top:13px;left:12.5%;right:12.5%;height:2px;border-radius:2px;
+  background:repeating-linear-gradient(90deg,rgba(184,111,120,.55) 0 6px,transparent 6px 11px);
+}
+.road::after{
+  content:"";position:absolute;top:13px;left:12.5%;height:2px;border-radius:2px;width:0;
+  background:linear-gradient(90deg,#8e4b55,#c99085);
+  animation:fill 3.6s ease-in-out infinite;
+}
+@keyframes fill{0%{width:0}70%,100%{width:75%}}
+.node{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:5px}
+.node b{
+  width:28px;height:28px;border-radius:50%;display:grid;place-items:center;
+  font-size:11.5px;font-weight:800;color:var(--rose-deep);
+  background:#fff;border:1.5px solid rgba(184,111,120,.6);box-shadow:0 4px 10px -5px rgba(142,75,85,.5);
+}
+.node.end b{background:linear-gradient(135deg,#c99085,#8e4b55);color:#fff;border-color:#fff}
+.node.end b svg{width:13px;height:13px}
+.node span{font-size:clamp(9px,2.5vw,10.5px);font-weight:600;line-height:1.25;color:var(--char-soft)}
+
+/* ===== Points card ===== */
+.pcard{padding:clamp(6px,1vh,9px) clamp(12px,3.6vw,16px)}
+.pcard h2{font-size:clamp(9.5px,2.6vw,10.5px);font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--rose);padding:4px 0 2px}
+.pt{display:flex;gap:11px;align-items:flex-start;padding:clamp(6px,1.05vh,9px) 0;border-top:1px solid rgba(184,111,120,.18)}
+.pcard h2+.pt{border-top:0}
+.pt .n{flex-shrink:0;width:30px;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:700;font-size:clamp(20px,5.4vw,24px);line-height:1;color:var(--rosegold)}
+.pt strong{display:block;font-size:clamp(13px,3.6vw,14.5px);font-weight:700;line-height:1.3}
+.pt small{display:block;font-size:clamp(11px,3vw,12px);line-height:1.4;color:var(--char-soft);margin-top:1px}
+
+/* ===== CTA ===== */
+.cta-zone{display:flex;flex-direction:column;gap:clamp(6px,1vh,9px)}
+.cta-ring{
+  position:relative;padding:2.5px;border-radius:20px;
+  background:linear-gradient(90deg,#f0d3bf,#8e4b55,#f7e1d3,#b86f78,#f0d3bf);
+  background-size:300% 100%;animation:ringflow 3.2s linear infinite;
+  box-shadow:0 14px 30px -12px rgba(142,75,85,.75),0 0 0 6px rgba(201,144,133,.14);
+}
+@keyframes ringflow{0%{background-position:0% 50%}100%{background-position:300% 50%}}
+.cta{
+  position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;min-height:clamp(54px,7.6vh,64px);padding:10px 16px;border-radius:17.5px;
+  font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(16px,4.6vw,21px);
+  letter-spacing:.4px;line-height:1.15;text-align:center;color:#fff;text-decoration:none;
+  background:linear-gradient(135deg,#2a2225 0%,#4a3438 45%,#8e4b55 100%);
+  text-shadow:0 1px 2px rgba(0,0,0,.25);
+  -webkit-tap-highlight-color:transparent;overflow-wrap:anywhere;
+}
+.cta::after{
+  content:"";position:absolute;top:0;left:-60%;width:45%;height:100%;
+  background:linear-gradient(105deg,transparent,rgba(255,228,214,.55),transparent);
+  transform:skewX(-18deg);animation:sweep 2.8s ease-in-out infinite;
+}
+@keyframes sweep{0%{left:-60%}55%,100%{left:120%}}
+.cta:active{transform:scale(.985)}
+.cta svg{width:22px;height:22px;flex-shrink:0;fill:#f0d3bf;position:relative;z-index:1}
+.cta span{position:relative;z-index:1}
+.status{display:flex;align-items:center;justify-content:center;gap:7px;font-size:clamp(10.5px,2.9vw,11.5px);font-weight:600;color:var(--rose-deep);text-align:center}
+.status svg{width:13px;height:13px;flex-shrink:0}
+
+.disc{font-size:clamp(9px,2.45vw,10px);line-height:1.45;color:#6b5a5e;padding:8px 11px;border-radius:13px;background:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.85)}
+.foot{font-size:clamp(8.5px,2.25vw,9.5px);color:#7c6a6e;text-align:center;line-height:1.45}
+.foot a{color:var(--rose-deep);font-weight:700;text-decoration:underline;text-underline-offset:2px}
+
+/* ===== Privacy popup ===== */
+.pp{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(42,34,37,.42);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.pp:target{display:flex}
+.pp.open{display:flex}
+.pp.closed{display:none}
+.pp-box{
+  position:relative;width:100%;max-width:440px;max-height:88dvh;overflow-y:auto;border-radius:24px;padding:22px 18px 18px;
+  background:linear-gradient(160deg,rgba(255,250,248,.97),rgba(248,234,229,.96));
+  border:1px solid #fff;box-shadow:0 30px 60px -20px rgba(42,34,37,.5),inset 0 1px 0 #fff;color:var(--char);
+}
+.pp-box h2{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;margin-bottom:2px;padding-right:36px}
+.pp-box .upd{font-size:11.5px;color:var(--char-soft);margin-bottom:10px}
+.pp-box h3{font-size:13px;font-weight:700;margin:12px 0 4px;color:var(--rose-deep)}
+.pp-box p{font-size:12.5px;line-height:1.55;color:#43373a}
+.pp-x{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:50%;border:1px solid rgba(184,111,120,.3);background:#fff;color:var(--char);font-size:18px;line-height:1;cursor:pointer;display:grid;place-items:center}
+
+/* ===== Height breakpoints ===== */
+@media (max-height:940px){.sub{display:none}}
+@media (max-height:900px){.pt small{display:none}.pt{align-items:center}}
+@media (max-height:800px){
+  h1{font-size:clamp(25px,7.6vw,33px)}
+  .hcard{padding:12px 14px}
+  .pt .n{font-size:20px}
+}
+@media (max-height:700px){
+  body{padding:calc(6px + env(safe-area-inset-top)) calc(6px + env(safe-area-inset-right)) calc(6px + env(safe-area-inset-bottom)) calc(6px + env(safe-area-inset-left))}
+  .frame{border-radius:24px;padding:11px 12px 8px;gap:5px}
+  .frame::after{border-radius:19px;inset:5px}
+  h1{font-size:clamp(23px,7vw,28px)}
+  .gcard{border-radius:16px}
+  .tagc{padding:6px 8px 6px 10px}
+  .mark{width:40px;height:40px}
+  .brand-name{font-size:19px}
+  .pt{padding:5px 0}
+  .cta{min-height:50px}
+  .disc{padding:6px 9px}
+}
+@media (max-height:620px){.road{display:none}}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<main class="frame">
+
+  <header class="head">
+    <div class="mark"><img src="data:image/webp;base64,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" alt="Gautam Jha" width="56" height="56"></div>
+    <div>
+      <div class="brand-name">Gautam Jha</div>
+      <div class="brand-sub">Market Learning Desk</div>
+    </div>
+    <span class="sep"></span>
+  </header>
+
+  <div class="gcard tagc">
+    <span class="free"><i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></i>Free beginner lessons</span>
+    <span class="pill">Before your first trade</span>
+  </div>
+
+  <section class="gcard hcard">
+    <h1>Understand the market <em>before</em> you place a trade.</h1>
+    <p class="sub">A calm, step-by-step learning space for anyone who wants to get the basics right first.</p>
+    <div class="road" aria-label="Learning path">
+      <div class="node"><b>1</b><span>How markets work</span></div>
+      <div class="node"><b>2</b><span>Reading candles</span></div>
+      <div class="node"><b>3</b><span>Mistakes to avoid</span></div>
+      <div class="node end"><b><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg></b><span>Practise with a plan</span></div>
+    </div>
+  </section>
+
+  <section class="gcard pcard">
+    <h2>What you'll learn</h2>
+    <div class="pt"><span class="n">01</span><span><strong>How the Stock Market Works</strong><small>What an exchange does and how buyers and sellers meet.</small></span></div>
+    <div class="pt"><span class="n">02</span><span><strong>Candlestick Basics</strong><small>What a candle's body and wicks say about a session.</small></span></div>
+    <div class="pt"><span class="n">03</span><span><strong>Common Beginner Mistakes</strong><small>Habits new traders slip into, and how to steer clear.</small></span></div>
+  </section>
+
+  <section class="cta-zone">
+    <div class="cta-ring">
+      <a id="cta" class="cta" href="https://t.me/+WMwqYioaehAyNTc1">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.4 3.2L2.9 10.4c-.9.4-.9 1.7.1 2l4.6 1.5 1.8 5.6c.3.9 1.4 1.1 2 .4l2.6-2.8 4.7 3.5c.7.5 1.7.1 1.9-.8l3-14.6c.2-1.1-.9-2-2.2-1.5zM9.6 14.3l-.5 3.6-1.2-3.9 9.6-6.9-7.9 7.2z"/></svg>
+        <span>JOIN FREE TELEGRAM CHANNEL</span>
+      </a>
+    </div>
+    <p class="status"><svg viewBox="0 0 24 24" fill="none" stroke="#8e4b55" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>No fee to join · Nothing to pay · Exit whenever you like</p>
+    <div class="disc"><strong>Disclaimer:</strong> This channel is for educational purposes only. Nothing shared is investment advice or a recommendation to buy or sell. We are not SEBI-registered advisors. Trading involves risk, including the loss of capital.</div>
+    <footer class="foot">
+      © <span id="yr">2026</span> Gautam Jha · <a href="#privacy" id="ppOpen">Privacy Policy</a><br>
+      This site is not a part of the Facebook website or Meta Platforms, Inc.
+    </footer>
+  </section>
+
+</main>
+
+<section id="privacy" class="pp" role="dialog" aria-modal="true" aria-labelledby="ppTitle">
+  <div class="pp-box">
+    <button type="button" class="pp-x" id="ppClose" aria-label="Close">×</button>
+    <h2 id="ppTitle">Privacy Policy</h2>
+    <p class="upd">Last updated: October 2026</p>
+
+    <h3>1. Who we are</h3>
+    <p>This website is operated by Gautam Jha. It introduces a free educational Telegram channel about stock market basics.</p>
+
+    <h3>2. Information we collect</h3>
+    <p>This page has no forms and never asks for your name, phone number or email. When you tap the join button, your browser saves a small flag (a timestamp) on your own device. The Meta Pixel records that the page was viewed and that the join button was clicked.</p>
+
+    <h3>3. Meta Pixel</h3>
+    <p>We use the Meta Pixel, a tool from Meta Platforms, Inc., to measure how our ads perform. Meta may receive technical details such as your browser type, device information, IP address and cookies, and processes them under its own privacy policy.</p>
+
+    <h3>4. Browser storage</h3>
+    <p>We keep one item in your browser's local storage: the time you tapped the join button. It helps us avoid counting the same visitor twice and is kept for up to 180 days. You can remove it at any time by clearing this site's data in your browser.</p>
+
+    <h3>5. How we use information</h3>
+    <p>We use this information only to measure our ads and to filter out fake or duplicate clicks. We never sell your information.</p>
+
+    <h3>6. Telegram</h3>
+    <p>The join button opens Telegram, a separate service with its own privacy policy. Joining the channel and leaving it are entirely your choice.</p>
+
+    <h3>7. Data retention</h3>
+    <p>Ad audiences built from Meta Pixel events are kept for up to 180 days. The browser flag described above also expires after 180 days.</p>
+
+    <h3>8. Your choices &amp; rights</h3>
+    <p>You can clear your browser storage, block cookies or trackers in your browser settings, and manage ad preferences in your Facebook or Instagram settings. Under India's Digital Personal Data Protection Act, 2023, you have rights such as accessing, correcting and erasing your personal data, and withdrawing consent.</p>
+
+    <h3>9. Age 18+</h3>
+    <p>This website and channel are intended only for adults aged 18 and above.</p>
+
+    <h3>10. Not investment advice</h3>
+    <p>All content is for education only. It is not investment advice or a buy/sell recommendation. We are not SEBI-registered advisors, and trading involves risk, including loss of capital.</p>
+
+    <h3>11. Changes</h3>
+    <p>We may update this policy from time to time. The date at the top shows the latest version.</p>
+  </div>
+</section>
+
+<script>
+(function(){
+  /* ===== Settings ===== */
+  var TG_LINK = 'https://t.me/+WMwqYioaehAyNTc1';
+  var MIN_TIME = 1000;
+  var KEEP_DAYS = 180;
+  var MIN_WAIT_MS = 150;
+  var MAX_WAIT_MS = 500;
+
+  var PREFIX = 'gj';
+  var KEY = PREFIX + '_sub_at';
+  var loadTime = Date.now();
+  var human = false;
+  var fired = false;
+
+  ['touchstart','pointerdown','pointermove','scroll','wheel','keydown'].forEach(function(ev){
+    window.addEventListener(ev, function(e){ if (e.isTrusted) human = true; }, {passive:true, capture:true});
+  });
+
+  function isBot(){
+    try{
+      if (navigator.webdriver) return true;
+      var ua = navigator.userAgent || '';
+      if (/bot|crawler|spider|headless|facebookexternalhit|lighthouse|preview/i.test(ua)) return true;
+      if (!navigator.languages || navigator.languages.length === 0) return true;
+    }catch(e){}
+    return false;
+  }
+
+  function alreadySubscribed(){
+    try{
+      var v = parseInt(localStorage.getItem(KEY), 10);
+      if (!v) return false;
+      return (Date.now() - v) < KEEP_DAYS * 86400000;
+    }catch(e){ return false; }
+  }
+
+  function markSubscribed(){
+    try{ localStorage.setItem(KEY, String(Date.now())); }catch(e){}
+  }
+
+  function go(){ window.location.href = TG_LINK; }
+
+  function waitForPixel(MIN, MAX, done){
+    var start = Date.now(), ran = false, obs = null;
+    function finish(){
+      if (ran) return; ran = true;
+      try{ if (obs) obs.disconnect(); }catch(e){}
+      done();
+    }
+    function seen(){ setTimeout(finish, Math.max(0, MIN - (Date.now() - start))); }
+    try{
+      if ('PerformanceObserver' in window){
+        obs = new PerformanceObserver(function(list){
+          list.getEntries().forEach(function(en){
+            if (/facebook\.com\/tr/.test(en.name) && /ev=Subscribe/.test(en.name)) seen();
+          });
+        });
+        obs.observe({type:'resource', buffered:true});
+      }
+    }catch(e){}
+    setTimeout(finish, MAX);
+  }
+
+  var cta = document.getElementById('cta');
+  cta.href = TG_LINK;
+  cta.addEventListener('click', function(e){
+    var ok = e.isTrusted && human && (Date.now() - loadTime >= MIN_TIME) && !isBot() &&
+             !fired && !alreadySubscribed() && document.visibilityState === 'visible' &&
+             typeof fbq === 'function';
+    if (!ok) return;
+    fired = true;
+    markSubscribed();
+    fbq('track', 'Subscribe', {content_name:'Telegram Join', currency:'INR', value:0},
+        {eventID: PREFIX + '_' + loadTime + '_' + Math.random().toString(36).slice(2, 10)});
+    e.preventDefault();
+    waitForPixel(MIN_WAIT_MS, MAX_WAIT_MS, go);
+  });
+
+  /* ===== Privacy popup ===== */
+  var pp = document.getElementById('privacy');
+  function openPP(e){
+    if (e) e.preventDefault();
+    pp.classList.remove('closed'); pp.classList.add('open');
+  }
+  function closePP(){
+    pp.classList.remove('open'); pp.classList.add('closed');
+    if (location.hash === '#privacy'){
+      try{ history.replaceState(null, '', location.pathname + location.search); }catch(e){}
+    }
+  }
+  document.getElementById('ppOpen').addEventListener('click', openPP);
+  document.getElementById('ppClose').addEventListener('click', closePP);
+  pp.addEventListener('click', function(e){ if (e.target === pp) closePP(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && (pp.classList.contains('open') || location.hash === '#privacy')) closePP(); });
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
